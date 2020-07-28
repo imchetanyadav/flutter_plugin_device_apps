@@ -110,6 +110,7 @@ class Application {
   final bool systemApp;
   final int installTimeMillis;
   final int updateTimeMillis;
+  final bool withLaunchIntent;
   final ApplicationCategory category;
 
   factory Application(Map map) {
@@ -134,6 +135,7 @@ class Application {
         assert(map['system_app'] != null),
         assert(map['install_time'] != null),
         assert(map['update_time'] != null),
+        assert(map['with_launch_intent'] != null),
         appName = map['app_name'],
         apkFilePath = map['apk_file_path'],
         packageName = map['package_name'],
@@ -143,6 +145,7 @@ class Application {
         systemApp = map['system_app'],
         installTimeMillis = map['install_time'],
         updateTimeMillis = map['update_time'],
+        withLaunchIntent = map['with_launch_intent'],
         category = _parseCategory(map['category']);
 
   /// [https://developer.android.com/reference/kotlin/android/content/pm/ApplicationInfo]
